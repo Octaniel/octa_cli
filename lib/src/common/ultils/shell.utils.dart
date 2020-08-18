@@ -13,6 +13,7 @@ class ShellUtils {
   }
 
   static void cdDir(String dir) async {
+    print('$dir->dirrrrrrrrrrrrrrrrrrrr');
     await run('cd', [dir], verbose: false);
   }
 

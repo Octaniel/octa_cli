@@ -26,8 +26,8 @@ class PubspecUtils {
     return null;
   }
 
-  static void addDependencies(String package, String version) async {
-    var pubspec = File('pubspec.yaml');
+  static void addDependencies(String path, String package, String version) async {
+    var pubspec = File('$path/pubspec.yaml');
     var lines = pubspec.readAsLinesSync();
     var index =
         lines.indexWhere((element) => element.trim() == 'dev_dependencies:');
