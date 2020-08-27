@@ -1,4 +1,5 @@
 import 'package:get_cli/arctekko.dart';
+import 'package:get_cli/src/arctekko/commands/sub_commands/create_binding_command.dart';
 
 void createCommand(List<String> args) async {
   if (!await Utils.isFlutterDirectory()) {
@@ -13,9 +14,13 @@ void createCommand(List<String> args) async {
   var type = args.first;
   args.removeAt(0);
   switch (type) {
-    case 'screen':
-    case 's':
+    case 'module':
+    case 'm':
       createScreenCommand(args);
+      break;
+    case 'binding':
+    case 'b':
+      createBindingCommand(args);
       break;
     case 'widget':
     case 'w':
