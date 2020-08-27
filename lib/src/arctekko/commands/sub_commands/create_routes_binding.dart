@@ -34,14 +34,14 @@ void _addBinding(String nameRoute, String nameModules) async {
   aux.addAll(lines);
   lines.removeRange(0, lines.length-1);
   lines.add('''import '../../data/provider/${nameRoute.toSnakeCase()}_provider.dart';''');
-  lines.add('''import '../../data/repository/pages/${nameRoute.toSnakeCase()}_repository.dart';''');
+  lines.add('''import '../../data/repository/${nameRoute.toSnakeCase()}_repository.dart';''');
   lines.add('''import 'controllers/${nameRoute.toSnakeCase()}_controller.dart';''');
   lines.addAll(aux);
 
  while(!lines.last.contains(';')) lines.removeLast();
  lines.add('''Get.put<${nameRoute.toPascalCase()}Controller>(${nameRoute.toPascalCase()}Controller(
         repository: ${nameRoute.toPascalCase()}Repository(
-            homeProvider: ${nameRoute.toPascalCase()}Provider(httpClient: http.Client()))));''');
+            ${nameRoute.toLowerCase()}Provider: ${nameRoute.toPascalCase()}Provider(httpClient: http.Client()))));''');
 
  lines.add('}');
  lines.add('}');
