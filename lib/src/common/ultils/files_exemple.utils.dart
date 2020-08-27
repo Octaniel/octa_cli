@@ -3,6 +3,7 @@ import 'package:get_cli/arctekko.dart';
 class FileExempleUtils {
   static String createTextController(String name) {
     return '''
+import '../../../data/repository/${name.toSnakeCase()}_repository.dart';
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 

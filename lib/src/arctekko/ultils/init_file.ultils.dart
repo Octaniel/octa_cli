@@ -1,10 +1,10 @@
 class InitFiles {
   static Map<String, String> files = {
     'main.dart': '''
-import 'routes/app_pages.dart';
-import 'routes/app_routes.dart';
-import 'theme/my_theme.dart';
-import 'translations/app_translations.dart';
+import 'app/routes/app_pages.dart';
+import 'app/routes/app_routes.dart';
+import 'app/theme/my_theme.dart';
+import 'app/translations/app_translations.dart';
 import 'app/app_binding.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

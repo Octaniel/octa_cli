@@ -22,9 +22,9 @@ void createRoutes(String nameRoute) async {
     await Utils.createFile(app_model);
     await Utils.createFile(app_provider);
     await Utils.createFile(app_repository);
-    await Utils.writeFile(app_routes, InitFiles.files['exemplo_model.dart']);
-    await Utils.writeFile(app_routes, InitFiles.files['exemplo_provider.dart']);
-    await Utils.writeFile(app_routes, InitFiles.files['exemplo_repository.dart']);
+    await Utils.writeFile(app_model, InitFiles.files['exemplo_model.dart']);
+    await Utils.writeFile(app_provider, InitFiles.files['exemplo_provider.dart']);
+    await Utils.writeFile(app_repository, InitFiles.files['exemplo_repository.dart']);
   }
 
   _addRoute(nameRoute);
