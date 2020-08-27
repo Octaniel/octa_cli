@@ -23,9 +23,9 @@ class ${name}Model {
   int id;
   String nome;
 
-  ExemploModel({this.id, this.nome});
+  ${name}Model({this.id, this.nome});
 
-  ExemploModel.fromJson(Map<String, dynamic> json) {
+  ${name}Model.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     nome = json['nome'];
   }
@@ -51,7 +51,7 @@ const baseUrl = 'http:locahost:8080/';
 
 class ${name}Provider {
   final http.Client httpClient;
-  ExemploProvider({@required this.httpClient});
+  ${name}Provider({@required this.httpClient});
 
   Future<List<${name}Model>> getAll() async {
     try {
@@ -136,16 +136,16 @@ import '../provider/${name.toSnakeCase()}_provider.dart';
 import 'package:meta/meta.dart';
 
 class ${name}Repository {
-  final ${name}Provider exemploProvider;
+  final ${name}Provider ${name.toSnakeCase()}Provider;
 
   ${name}Repository({@required this.${name.toSnakeCase()}Provider})
       : assert(${name.toSnakeCase()}Provider != null);
 
-  Future<List<ExemploModel>> getAll() async {
+  Future<List<${name}Model>> getAll() async {
     return await ${name.toSnakeCase()}Provider.getAll();
   }
 
-  Future<ExemploModel> getId(id) async {
+  Future<${name}Model> getId(id) async {
     return await ${name.toSnakeCase()}Provider.getId(id);
   }
 

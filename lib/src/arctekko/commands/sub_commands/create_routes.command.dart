@@ -27,7 +27,7 @@ void createRoutes(String nameRoute) async {
     await Utils.writeFile(app_model, FileExempleUtils.createTextModel(nameRoute.toPascalCase()));
     await Utils.writeFile(app_provider, FileExempleUtils.createTextProvider(nameRoute.toPascalCase()));
     await Utils.writeFile(app_repository, FileExempleUtils.createTextRepository(nameRoute.toPascalCase()));
-    await Utils.writeFile(app_binding, FileExempleUtils.createTextRepository(nameRoute.toPascalCase()));
+    await Utils.writeFile(app_binding, FileExempleUtils.createTextBinding(nameRoute.toPascalCase()));
   }
 
   _addRoute(nameRoute);
@@ -38,6 +38,12 @@ void _addRoute(String nameRoute) async {
   var app_pages = 'lib/app/routes/app_pages.dart';
   var lines = await File(app_routes).readAsLinesSync();
   var lines1 = await File(app_pages).readAsLinesSync();
+  var aux = <String>[];
+  aux.addAll(lines1);
+  lines1.removeRange(0, lines1.length-1);
+  lines1.add('''import '../modules/${nameRoute.toSnakeCase()}/${nameRoute.toSnakeCase()}_binding.dart';''');
+  lines1.add('''import '../modules/${nameRoute.toSnakeCase()}/pages/${nameRoute.toSnakeCase()}_page.dart';''');
+  lines1.addAll(aux);
 
   while (lines.last.isEmpty) {
     lines.removeLast();
