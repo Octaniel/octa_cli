@@ -5,21 +5,21 @@ void CreateDirectory(String path, bool skipExample) async {
   var widgetFile = File('./test/widget_test.dart');
   if (await widgetFile.existsSync()) await widgetFile.deleteSync();
   var dirs = [
-    'lib/data/',
-    'lib/data/model/',
-    'lib/data/provider/',
-    'lib/data/repository/',
-    'lib/modules/',
-    'lib/modules/exemplo/',
-    'lib/modules/exemplo/controllers/',
-    'lib/modules/exemplo/pages/',
-    'lib/modules/exemplo/widgets/',
-    'lib/res/',
-    'lib/routes/',
-    'lib/translations/',
-    'lib/translations/pt_BR/',
-    'lib/translations/en_US/',
-    'lib/widgets/',
+    'lib/app/data/',
+    'lib/app/data/model/',
+    'lib/app/data/provider/',
+    'lib/app/data/repository/',
+    'lib/app/modules/',
+    'lib/app/modules/exemplo/',
+    'lib/app/modules/exemplo/controllers/',
+    'lib/app/modules/exemplo/pages/',
+    'lib/app/modules/exemplo/widgets/',
+    'lib/app/res/',
+    'lib/app/routes/',
+    'lib/app/translations/',
+    'lib/app/translations/pt_BR/',
+    'lib/app/translations/en_US/',
+    'lib/app/widgets/',
   ];
   var dirTheme = 'lib/theme/';
   dirs.add(dirTheme);
@@ -33,77 +33,77 @@ void CreateDirectory(String path, bool skipExample) async {
     },
     {
       'filename': 'exemplo_model.dart',
-      'path': 'lib/data/model/',
+      'path': 'lib/app/data/model/',
       'content': InitFiles.files['exemplo_model.dart']
     },
     {
       'filename': 'exemplo_provider.dart',
-      'path': 'lib/data/provider/',
+      'path': 'lib/app/data/provider/',
       'content': InitFiles.files['exemplo_provider.dart']
     },
     {
       'filename': 'exemplo_repository.dart',
-      'path': 'lib/data/repository/',
+      'path': 'lib/app/data/repository/',
       'content': InitFiles.files['exemplo_repository.dart']
     },
     {
       'filename': 'exemplo_controller.dart',
-      'path': 'lib/modules/exemplo/controllers/',
+      'path': 'lib/app/modules/exemplo/controllers/',
       'content': InitFiles.files['exemplo_controller.dart']
     },
     {
       'filename': 'exemplo_page.dart',
-      'path': 'lib/modules/exemplo/pages/',
+      'path': 'lib/app/modules/exemplo/pages/',
       'content': InitFiles.files['exemplo_page.dart']
     },
     {
       'filename': 'exemplo_widget.dart',
-      'path': 'lib/modules/exemplo/widgets/',
+      'path': 'lib/app/modules/exemplo/widgets/',
       'content': InitFiles.files['exemplo_widget.dart']
     },
     {
       'filename': 'exemplo_binding.dart',
-      'path': 'lib/modules/exemplo/',
+      'path': 'lib/app/modules/exemplo/',
       'content': InitFiles.files['exemplo_binding.dart']
     },
     {
       'filename': 'static.dart',
-      'path': 'lib/res/',
+      'path': 'lib/app/res/',
       'content': InitFiles.files['static.dart']
     },
     {
       'filename': 'app_routes.dart',
-      'path': 'lib/routes/',
+      'path': 'lib/app/routes/',
       'content': InitFiles.files['app_routes.dart']
     },
     {
       'filename': 'app_pages.dart',
-      'path': 'lib/routes/',
+      'path': 'lib/app/routes/',
       'content': InitFiles.files['app_pages.dart']
     },
     {
       'filename': 'pt_br_translation.dart',
-      'path': 'lib/translations/pt_BR/',
+      'path': 'lib/app/translations/pt_BR/',
       'content': InitFiles.files['pt_br_translation.dart']
     },
     {
       'filename': 'en_us_translation.dart',
-      'path': 'lib/translations/en_US/',
+      'path': 'lib/app/translations/en_US/',
       'content': InitFiles.files['en_us_translation.dart']
     },
     {
       'filename': 'app_translations.dart',
-      'path': 'lib/translations/',
+      'path': 'lib/app/translations/',
       'content': InitFiles.files['app_translations.dart']
     },
     {
       'filename': 'app_binding.dart',
-      'path': 'lib/',
+      'path': 'lib/app/',
       'content': InitFiles.files['app_binding.dart']
     },
     {
       'filename': 'app_controller.dart',
-      'path': 'lib/',
+      'path': 'lib/app/',
       'content': InitFiles.files['app_controller.dart']
     },
   ];

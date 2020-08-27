@@ -3,8 +3,11 @@ import 'dart:io';
 import 'package:get_cli/arctekko.dart';
 
 void createRoutes(String nameRoute) async {
-  var app_routes = 'lib/routes/app_routes.dart';
-  var app_pages = 'lib/routes/app_pages.dart';
+  var app_routes = 'lib/app/routes/app_routes.dart';
+  var app_pages = 'lib/app/routes/app_pages.dart';
+  var app_model = 'lib/app/data/model/${nameRoute}.dart';
+  var app_provider = 'lib/app/data/provider/${nameRoute}.dart';
+  var app_repository = 'lib/app/data/repository/${nameRoute}.dart';
   if (!await Utils.existsFile(app_routes) &&
       !await Utils.existsFile(app_pages)) {
     await Utils.createFile(app_routes);
@@ -13,12 +16,23 @@ void createRoutes(String nameRoute) async {
     await Utils.writeFile(app_pages, InitFiles.files['app_pages.dart']);
   }
 
+  if(!await Utils.existsFile(app_model)&&
+      !await Utils.existsFile(app_provider)&&
+      !await Utils.existsFile(app_repository)){
+    await Utils.createFile(app_model);
+    await Utils.createFile(app_provider);
+    await Utils.createFile(app_repository);
+    await Utils.writeFile(app_routes, InitFiles.files['exemplo_model.dart']);
+    await Utils.writeFile(app_routes, InitFiles.files['exemplo_provider.dart']);
+    await Utils.writeFile(app_routes, InitFiles.files['exemplo_repository.dart']);
+  }
+
   _addRoute(nameRoute);
 }
 
 void _addRoute(String nameRoute) async {
-  var app_routes = 'lib/routes/app_routes.dart';
-  var app_pages = 'lib/routes/app_pages.dart';
+  var app_routes = 'lib/app/routes/app_routes.dart';
+  var app_pages = 'lib/app/routes/app_pages.dart';
   var lines = await File(app_routes).readAsLinesSync();
   var lines1 = await File(app_pages).readAsLinesSync();
 

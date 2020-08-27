@@ -16,7 +16,7 @@ void createScreenCommand(List<String> args) async {
   name = name.toLowerCase().trimLeft();
   var nameSnakeCase = name.toSnakeCase();
   var screenFileName = '${nameSnakeCase}_page.dart';
-  var screenDirectory = 'lib/modules/$nameSnakeCase';
+  var screenDirectory = 'lib/app/modules/$nameSnakeCase';
   await Utils.createDiretory(screenDirectory);
   await Utils.createDiretory('${screenDirectory}/controllers');
   await Utils.createDiretory('${screenDirectory}/pages');

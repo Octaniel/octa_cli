@@ -33,6 +33,7 @@ void initCommand(List<String> args) async {
   await PubspecUtils.addDependencies(dir,'font_awesome_flutter', '8.8.1');
   await PubspecUtils.addDependencies(dir,'cross_local_storage', '8.8.1');
   await PubspecUtils.addDependencies(dir,'flutter_neumorphic', '3.0.1');
+  await PubspecUtils.addDependencies(dir,'faker', '1.2.1');
   await ShellUtils.pubGet();
   await CreateDirectory(dir, skipExample);
   await ShellUtils.cdDir('..');
