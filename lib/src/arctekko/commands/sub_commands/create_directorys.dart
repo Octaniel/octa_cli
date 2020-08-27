@@ -21,7 +21,7 @@ void CreateDirectory(String path, bool skipExample) async {
     'lib/app/translations/en_US/',
     'lib/app/widgets/',
   ];
-  var dirTheme = 'lib/theme/';
+  var dirTheme = 'lib/app/theme/';
   dirs.add(dirTheme);
 
   var themeFiles = ['my_theme.dart'];
