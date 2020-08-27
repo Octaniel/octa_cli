@@ -24,6 +24,7 @@ void createRoutes(String nameRoute) async {
     await Utils.createFile(app_model);
     await Utils.createFile(app_provider);
     await Utils.createFile(app_repository);
+    await Utils.createFile(app_binding);
     await Utils.writeFile(app_model, FileExempleUtils.createTextModel(nameRoute.toPascalCase()));
     await Utils.writeFile(app_provider, FileExempleUtils.createTextProvider(nameRoute.toPascalCase()));
     await Utils.writeFile(app_repository, FileExempleUtils.createTextRepository(nameRoute.toPascalCase()));
